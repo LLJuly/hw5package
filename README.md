@@ -1,0 +1,36 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# hw5package
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of hw5package is to calculate the third length of a right
+triangle given other two sides, and calculate the trimmed mean of a
+vector.
+
+## Installation
+
+You can install the development version of hw5package like so:
+
+``` r
+install.packages(hw5package)
+```
+
+## Example
+
+The function f1Pythagorean() is very flexible.It can calculate value
+when you give $a$ and $b$, or $a$ and $c$, or $b$ and $c$. For example,
+if you input the length of two sides of the right triangle, $a=3$,
+$b=4$, it return the length of hypotenuse, which is $5$.
+
+The function f2trimmed_mean() is used for calculating the mean of a
+vector, ignoring the $s$ smallest values and $l$ largest values. This is
+a basic example which shows you how to use function f2trimmed_mean():
+
+``` r
+library(hw5package)
+f2trimmed_mean(c(1,7,3,2,5,0.5,9,10),1,2)
+#> [1] 3.6
+```

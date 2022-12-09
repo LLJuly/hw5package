@@ -1,0 +1,60 @@
+---
+title: "hw5_vignette"
+author: "Li Liu"
+date: "`r format(Sys.Date(), '%m/%d/%Y')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{hw5_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, eval=F}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(hw5package)
+```
+
+# Overview 
+ The hw5package is the first package I create. It contains two functions. 
+
+
+# Functions in this package
+## The first function is called f1Pythagorean. 
+It is used for calculating the length of the third side given two sides of a 
+right triangle.The Pythagorean theorem states that the square of the hypotenuse
+(the side opposite the right angle) is equal to the sum of the squares of the
+other two side: 
+$$ c^2 = a^2 + b^2.$$
+This function is very flexible.It can 
+calculate value when you give $a$ and $b$, or $a$ and $c$, or $b$ and $c$.
+If you only provide the length of one side, the function will throw an 
+error. Likewise, if you provide the lengths of all three sides, the 
+function will throw an error. If you provide any values other than
+numeric values, the function will throw an error.
+ 
+ 
+For example, if you input the length of two sides of the right triangle, $a=3$,
+$b=4$, it return the length of hypotenuse, which is $5$. This function can only 
+deal with numeric values.
+
+
+## The second function is called f2trimmed_mean.
+It is used for calculating the mean of a vector, ignoring the $s$ smallest
+values and $l$ largest values. For example, if $x = c(1,7,3,2,5,0.5,9,10)$, 
+$s=1$ and $l=2$, it will return the mean of $c(1,7,3,2,5)$. $x$ should have 
+at least $s+l+1$ values, otherwise it will return error message.
+```{r}
+f2trimmed_mean(c(1,7,3,2,5,0.5,9,10),1,2)
+```
+
+
+In this example, if you input $x = c(1,7,3,2,5,0.5,9,10)$, $s=1$ and $l=2$. The
+$1$ smallest value is $0.5$, the $2$ largest values are $9$ and $10$, then the 
+trimmed vector is $x = c(1,7,3,2,5)$. This function returns the value of this 
+trimmed vrctor, which is $3.6$.
